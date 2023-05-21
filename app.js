@@ -24,5 +24,6 @@ const ip = "0.0.0.0"
 
 // Arrancando el servidor
 app.listen(port, ip, () => {
-  console.log(`🤖 Sirviendo en http://localhost:${port}`);
+    console.log("📢 Sirviendo en http://localhost:3000");
+    console.log(`📢 Sirviendo en http://${process.env.IP}:${process.env.PORT}`);
 });
