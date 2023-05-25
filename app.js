@@ -1,11 +1,15 @@
 // Importando Express
 import express from 'express';
+import httpStatus from 'http-status';
 
 // Importando el enrutador
 import adminRouter from './routes/admin.route.js';
 import shopRouter from './routes/shop.route.js';
 
-import httpStatus from 'http-status';
+import { ROOT_DIR } from './helpers/paths.js'
+
+import path from 'path';
+
 
 // Creando la instancia de express
 // que basicamente es un middleware
@@ -20,7 +24,7 @@ app.use('/admin', adminRouter);
 app.use(shopRouter);
 app.use((req, res, next) => {
     res.status(httpStatus.NOT_FOUND)
-    .sendFile(path.resolve('views','notfound'))
+    .sendFile(path.resolve('views','notfound.html'))
   });
 
 
