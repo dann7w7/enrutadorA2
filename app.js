@@ -18,14 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/admin', adminRouter);
 // Se agrega ruta shop
 app.use(shopRouter);
-app.use((req, res) =>{
-    res.status(404).send(`
-    <h1 
-    style="color: crimson; text-align: center; font-size: 400%; margin: 3em 0 0 0">
-    404 RESOURCE NOT FOUND 
-    </h1>
-    `);
-});
+app.use((req, res, next) => {
+    res.status(httpStatus.NOT_FOUND)
+    .sendFile(path.resolve('views','notfound'))
+  });
 
 
 // Definiendo puertos
