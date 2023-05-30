@@ -6,10 +6,8 @@ import path from 'path';
 // Creando una instancia del enrutador de express
 const router = Router();
 
-
 // Importando productos
 import { products } from './admin.route.js';
-
 
 // GET /
 router.get('/', (req, res)=>{
