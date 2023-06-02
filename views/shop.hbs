@@ -1,4 +1,5 @@
 <h1>My Products</h1>
+{{#unless isProductsListEmpty }}
 <p>Product List</p>
 <div class="grid">
   {{#each products}}
@@ -31,3 +32,6 @@
   </article>
   {{/each}}
 </div>
+{{else}}
+<h2 style="color: cornflowerblue;">No products in stock</h2>
+{{/unless}}
